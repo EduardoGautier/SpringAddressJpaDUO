@@ -11,7 +11,7 @@ public class AddressEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String zip;
+	private String zipCode;
 	private String publicPlace;
 
 
@@ -19,9 +19,9 @@ public class AddressEntity {
 		super();
 	}
 
-	public AddressEntity(String zip, String publicPlace) {
+	public AddressEntity(String zipCode, String publicPlace) {
 		super();
-		this.zip = zip;
+		this.zipCode = zipCode;
 		this.publicPlace = publicPlace;
 	
 	}
@@ -34,19 +34,19 @@ public class AddressEntity {
 		this.id = id;
 	}
 
-	public String getZip() {
-		return zip;
+	public String getzipCode() {
+		return zipCode;
 	}
 
-	public void setZip(String zip) {
-		this.zip = zip;
+	public void setzipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
-	public String getLogradouro() {
+	public String getpublicPlace() {
 		return publicPlace;
 	}
 
-	public void setLogradouro(String publicPlace) {
+	public void setpublicPlace(String publicPlace) {
 		this.publicPlace = publicPlace;
 	}
 

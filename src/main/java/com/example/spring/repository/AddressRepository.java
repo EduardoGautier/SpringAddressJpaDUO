@@ -8,6 +8,6 @@ import com.example.spring.entity.AddressEntity;
 
 public interface AddressRepository extends CrudRepository<AddressEntity, Long> {
 	
-	List<AddressEntity> findByZip(String zip);
+	List<AddressEntity> findByzipCode(String zipCode);
 
 }
