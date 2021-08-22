@@ -1,6 +1,5 @@
 package com.example.spring.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,13 +23,13 @@ public class AddressRestController {
 	
 	@Bean
 	public void populate() {
-		repository.save(new AddressEntity("90010-170", "Praça Montevidéo"));
-		repository.save(new AddressEntity("94935-410", "Lidio Batista Soares"));
-		repository.save(new AddressEntity("01001-000", "Praça da Sé"));
+		repository.save(new AddressEntity("90010170", "Praça Montevidéo"));
+		repository.save(new AddressEntity("94935410", "Lidio Batista Soares"));
+		repository.save(new AddressEntity("01001000", "Praça da Sé"));
 	}
 	
 	@GetMapping("{zipCode}")
-	public List<AddressEntity> getIterableZip(@PathVariable String zipCode) {
+	public AddressEntity getIterableZip(@PathVariable String zipCode) {
 		return repository.findByzipCode(zipCode);
 	}
 	

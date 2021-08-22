@@ -12,8 +12,6 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 public class JacksonCustomAddressEntityDeserializer extends StdDeserializer<AddressEntity> {
 	
-	
-	
 
 	public JacksonCustomAddressEntityDeserializer(){
 		this(null);
@@ -25,20 +23,15 @@ public class JacksonCustomAddressEntityDeserializer extends StdDeserializer<Addr
 	
 	@Override
 	public AddressEntity deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
-		
 		JsonNode node = parser.getCodec().readTree(parser);
-		
 		AddressEntity address = new AddressEntity();
-		
-		String zipCode = node.get("cep").asText(null);
-		
+		String zip = node.get("cep").asText(null);
 		String publicPlace = node.get("logradouro").asText(null);
-		
-		
-		address.setzipCode(zipCode);
-		
+
+		address.setzipCode(zip);
 		address.setpublicPlace(publicPlace);
-		
+
+		        
 		return address;
 	}
 	
