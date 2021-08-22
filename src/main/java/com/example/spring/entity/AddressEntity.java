@@ -28,10 +28,17 @@ public class AddressEntity {
 	@Column(name = "publicPlace")
 	private String publicPlace;
 
-
+	
 	public AddressEntity() {
 		super();
 	}
+	
+
+	public AddressEntity(String zipCode) {
+		super();
+		this.zipCode = zipCode;
+	}
+
 
 	public AddressEntity(String zipCode, String publicPlace) {
 		super();

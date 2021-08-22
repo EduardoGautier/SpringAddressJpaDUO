@@ -23,9 +23,9 @@ public class AddressRestController {
 	
 	@Bean
 	public void populate() {
-		repository.save(new AddressEntity("90010170", "Praça Montevidéo"));
-		repository.save(new AddressEntity("94935410", "Lidio Batista Soares"));
-		repository.save(new AddressEntity("01001000", "Praça da Sé"));
+		repository.save(new AddressEntity("90010-170"));
+		repository.save(new AddressEntity("94935-410"));
+		repository.save(new AddressEntity("01001-000"));
 	}
 	
 	@GetMapping("{zipCode}")
@@ -33,10 +33,6 @@ public class AddressRestController {
 		return repository.findByzipCode(zipCode);
 	}
 	
-	@PostMapping("add")
-	public AddressEntity addCep(@RequestBody AddressEntity zipCode) {
-		return repository.save(zipCode);
-	}
 	
 	@DeleteMapping("{id}")
 	public void deleteById(@PathVariable Long id) {

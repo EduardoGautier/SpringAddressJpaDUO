@@ -23,16 +23,15 @@ class SpringAddressJpaApplicationTest {
 	private MockMvc mvc;
 
 
-
 	@Test
-	void testGetAllAddressSuccess() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/api/addresses/zip/90010-170").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().contentType("application/json"))
-				.andExpect(jsonPath("$.[0].id").value(1))
-				.andExpect(jsonPath("$.[0].zipCode").value("90010-170"))
-				.andExpect(jsonPath("$.[0].publicPlace").value("Praça Montevidéo"));
+	public void testGetAllAddressSucess() throws Exception {
+		mvc.perform(MockMvcRequestBuilders
+				.get("/api/addresses/zip/90010-170"))
+					.andExpect(status().isOk())
+					.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+					.andExpect(jsonPath("$.cep").value("90010-170"));
 	}
+
 
 	@Test
 	void testGetAllAddressNotFound() throws Exception {
