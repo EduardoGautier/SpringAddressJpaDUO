@@ -23,11 +23,12 @@ public class JacksonCustomAddressEntitySerializer extends StdSerializer<AddressE
 	public void serialize(AddressEntity address, JsonGenerator jgen, SerializerProvider provider) throws IOException {
 		
 		jgen.writeStartObject();
-		if (address.getId() == null) {
+		
+		/*if (address.getId() == null) {
 			jgen.writeNullField("id");
 		} else {
 			jgen.writeNumberField("id", address.getId());
-		}
+		}*/
 
 		jgen.writeStringField("cep", address.getzipCode());
 		jgen.writeStringField("logradouro", address.getpublicPlace());

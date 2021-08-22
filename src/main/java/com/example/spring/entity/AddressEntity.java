@@ -34,11 +34,6 @@ public class AddressEntity {
 	}
 	
 
-	public AddressEntity(String zipCode) {
-		super();
-		this.zipCode = zipCode;
-	}
-
 
 	public AddressEntity(String zipCode, String publicPlace) {
 		super();
