@@ -26,10 +26,10 @@ class SpringAddressJpaApplicationTest {
 	@Test
 	public void testGetAllAddressSucess() throws Exception {
 		mvc.perform(MockMvcRequestBuilders
-				.get("/api/addresses/zip/90010-170"))
+				.get("/api/addresses/zip/90010170"))
 					.andExpect(status().isOk())
 					.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-					.andExpect(jsonPath("$.cep").value("90010-170"));
+					.andExpect(jsonPath("$.cep").value("90010170"));
 	}
 
 

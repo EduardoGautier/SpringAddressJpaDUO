@@ -11,7 +11,5 @@ public class SpringAddressJpaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringAddressJpaApplication.class, args);
 	}
-	
-
 
 }

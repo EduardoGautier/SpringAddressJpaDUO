@@ -21,13 +21,6 @@ public class AddressRestController {
 	@Autowired
 	 AddressRepository repository;
 	
-	@Bean
-	public void populate() {
-		repository.save(new AddressEntity("90010-170","Praça Montevidéo"));
-		repository.save(new AddressEntity("94935-410","Lídio Batista Soares"));
-		repository.save(new AddressEntity("01001-000","Praça da Sé"));
-	}
-	
 	@GetMapping("{zipCode}")
 	public AddressEntity getIterableZip(@PathVariable String zipCode) {
 		return repository.findByzipCode(zipCode);

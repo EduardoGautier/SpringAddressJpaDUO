@@ -32,8 +32,6 @@ public class AddressEntity {
 	public AddressEntity() {
 		super();
 	}
-	
-
 
 	public AddressEntity(String zipCode, String publicPlace) {
 		super();
