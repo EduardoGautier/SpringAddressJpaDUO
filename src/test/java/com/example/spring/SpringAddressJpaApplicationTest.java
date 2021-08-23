@@ -29,7 +29,7 @@ class SpringAddressJpaApplicationTest {
 				.get("/api/addresses/zip/90010170"))
 					.andExpect(status().isOk())
 					.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-					.andExpect(jsonPath("$.cep").value("90010170"));
+					.andExpect(jsonPath("$.Cep").value("90010170"));
 	}
 
 
@@ -40,4 +40,5 @@ class SpringAddressJpaApplicationTest {
 				.andExpect(status().isNotFound());
 	}
 
+	
 }

@@ -30,9 +30,13 @@ public class JacksonCustomAddressEntitySerializer extends StdSerializer<AddressE
 			jgen.writeNumberField("id", address.getId());
 		}*/
 
-		jgen.writeStringField("cep", address.getzipCode());
-		jgen.writeStringField("logradouro", address.getpublicPlace());
-	
+		jgen.writeStringField("Cep", address.getZipCode());
+		jgen.writeStringField("Logradouro", address.getPublicPlace());
+		jgen.writeStringField("Complemento", address.getComplement());
+		jgen.writeStringField("Bairro", address.getDistrict());
+		jgen.writeStringField("Localidade", address.getLocation());
+		jgen.writeStringField("Uf", address.getFederativeUnit());
+		
 	}
 	
 	

@@ -27,10 +27,8 @@ public class JacksonCustomAddressEntityDeserializer extends StdDeserializer<Addr
 		String zip = node.get("cep").asText(null);
 		String publicPlace = node.get("logradouro").asText(null);
 
-		address.setzipCode(zip);
-		address.setpublicPlace(publicPlace);
-
-		        
+		address.setZipCode(zip);
+		address.setPublicPlace(publicPlace);	        
 		return address;
 	}
 	
