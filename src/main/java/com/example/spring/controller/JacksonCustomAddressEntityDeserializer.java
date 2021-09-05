@@ -11,6 +11,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 public class JacksonCustomAddressEntityDeserializer extends StdDeserializer<AddressEntity> {
 	
+	private static final long serialVersionUID = -3413827126625189247L;
+
+	
 
 	public JacksonCustomAddressEntityDeserializer(){
 		this(null);

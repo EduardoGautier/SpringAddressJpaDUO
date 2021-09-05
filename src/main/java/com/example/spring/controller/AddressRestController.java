@@ -1,6 +1,8 @@
 package com.example.spring.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,11 +28,16 @@ public class AddressRestController {
 		return repository.findByzipCode(zipCode);
 	}
 	
+	@GetMapping("")
+	public List<AddressEntity> getAllAddress() {
+		System.out.println(repository.findAll());
+		return repository.findAll();
+	}
+	
 	
 	@DeleteMapping("{id}")
 	public void deleteById(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
 
-	
 }
